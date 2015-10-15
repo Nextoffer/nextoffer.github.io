@@ -1,0 +1,648 @@
+<!doctype html>
+<html class="theme-next use-motion ">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+<meta name="baidu-site-verification" content="I0Gk78EGJO" />
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.3"/>
+
+
+
+
+  <meta name="keywords" content="airbnb,搜索算法,姚旭,Nextoffer博客,技术分享,哪上班博客" />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="https://www.nextoffer.com/static/desktop/img/favicon.ico?v=0.4.3" />
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: '',
+    analytics: {
+      google: 'UA-36895549-2'
+    },
+    sidebar: 'post'
+  };
+</script>
+
+
+
+
+  <title> AMA with Airbnb 工程师姚旭 // Nextoffer Blog </title>
+</head>
+
+<body>
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <div id="header" class="header">
+      <div class="header-inner">
+        <h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand">
+      <!--<span class="logo">
+        <i class="icon-logo"></i>
+      </span>
+      <span class="site-title">Nextoffer Blog</span>-->
+      <span class="site-title" style="opacity:1;top:0px;">Nextoffer Blog</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<div class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/">
+            <i class="menu-item-icon icon-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            <i class="menu-item-icon icon-categories"></i> <br />
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            <i class="menu-item-icon icon-archives"></i> <br />
+            归档
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+</div>
+
+
+      </div>
+    </div>
+
+    <div id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              AMA with Airbnb 工程师姚旭
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于 2015-09-24
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/技术/">技术</a>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/ama-airbnb-xu/#comments" >
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="ama-airbnb-xu/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <h3 id="关于_AMA">关于 AMA</h3><p><strong>AskMeAnything</strong> 是 <a href="https://www.nextoffer.com" target="_blank" rel="external">Nextoffer</a> 推出的一个互联网从业人员的问答节目。</p>
+<p>AMA 每周会请来一位嘉宾，每位嘉宾都是在技术、产品、设计、运营等任意一个领域有着丰富经验、或是能力突出的大咖，通过一个小时与用户的交流与问答，为大家带来一些宝贵的职场经验与深刻的人生感悟。</p>
+<h3 id="嘉宾介绍：姚旭">嘉宾介绍：姚旭</h3><p><img src="http://i.v2ex.co/89Gmb0C6l.jpeg" alt=""></p>
+<p>姚旭，一个刚过而立之年的互联网精英。</p>
+<p>目前是 Airbnb Search Ranking 工程师，负责优化 Airbnb 的 search ranking model 。</p>
+<a id="more"></a>
+<p>在加入 Airbnb 之前，他曾在百度，知乎等公司负责数据挖掘、搜索等相关工作。而后出国加入 Facebook，工作近一年后又负责 Instagram 的广告平台搭建。</p>
+<p>在搜索引擎方面，姚攻城狮可谓是一位大咖。他曾在知乎回答过许多关于搜索引擎的专业问题，对于每一个问题，姚攻城狮专业而又深入浅出地讲明了自己的观点，为正在成长的小狮子们提供了不少专业建议和人生指导。</p>
+<h3 id="精选问答">精选问答</h3><p><strong>Aaron：前辈好，我现在在一个创业公司里做技术负责人。作为一个工程师如果想不断提高自己，核心竞争力应该是什么。是一个良好的算法基础，还是要有一个成功的项目经验？</strong></p>
+<blockquote>
+<p>那要看你的远期目标了，总体上说技术＋管理两条线。技术上就是比拼硬实力，不论你的细分领域是什么。可以看看自己是不是属于top 1%的人群，同时也可以预估一下自己这个技术方向上未来的发展情况。比如现在做windows桌面开发的top 1%程序员也要认真考虑自己以后想做什么了。我们在硅谷看到了很多及其聪明的人，技术方向反而不重要，无论做什么很快都可以上手，可以解决问题。 另外一方面，就是往管理上发展了。people manager是上一代的叫法和做法了，现在的manager需要有非常扎实的技术基础，项目经验，同时还要很好的skill去和人打交道，挑战越来越大。</p>
+</blockquote>
+<p><strong>洛克：我在一间中小企业做全栈程序员。请问加入谷歌、FB这些公司前，该如何选择适合自己的专长？需要做哪些准备？心态上又该如何调整？</strong></p>
+<blockquote>
+<p>Google的面试是每个部门独立面的，所以你想加入之前需要好好调查一下每个部门在做什么，最直接的方法就是找里面的人聊一聊。虽然还是很难了解全面，至少能给你一些信息。否则呢，你可以和google负责招聘的recuitor聊聊，他／她会给你很多信息，帮你找你喜欢的部门和职位。<br>Facebook这些新公司就更简单了，full stack是不分部门面试的，所以只要你通过全部面试，你可以进来以后，在8-10周的bootcamp慢慢挑你感兴趣的部门。<br>FB这种方式也是目前湾区招聘的主流，general面试，通过之后挑自己喜欢的地方。心态上简单说就是保持一颗open的心就好了，一家之言，供参考。</p>
+</blockquote>
+<p><strong>Aaron：技术路线有哪些有效的发家致富的方法？</strong></p>
+<blockquote>
+<p>很多技术发家都是因为自己选对了公司选对了时机，但似乎大多数都是因为碰运气。 而且一般3-5年才能够验证结果。 选错一次就可能面对自己不再年轻却也没积累多少资本的囧境，如何处理这种焦虑感。<br>刚才谈了技术也好，管理也好，都是提高自身的实力。“发家致富”是个因人而异的概念，每个人野心不一样。 有的人觉得一年整20万美金／100万人民币就够了，有的人觉得这个数字完全不够。总体来说，如果你想成top 1%的人群，冒险是必须的。如果觉得风险实在太大，大到自己心理无法承受的状态，不妨可以选择更保守的方式。当你的积累的钱也好，经验也好逐步丰富起来了，你能承受的风险也就越来越大了。总之，没有绝对的对错，就看自己的心态了。</p>
+</blockquote>
+<p><strong>Aaron：中国工程师直接到湾区工作，总体来说是越来越容易还是越来越难？ 是否只有去FB这种大公司才能解决签证问题？</strong></p>
+<blockquote>
+<p>总体上说，越来越简单了。从经济危机过去以后，湾区到整个美国高科技行业整体人材供给根本不够，只能不断从全球招人，只要经济不垮，这个趋势还会继续。同时也因为从海外招的人越来越多了，美国每年工作签证限额已经不够了，很多人拿到了offer，但无法抽签抽到h1b签证，导致无法成行。FB这种有海外分部的公司，好处是当你无法抽到h1b签证，还是可以去海外办公室工作一年，第二年再通过L1签证到美国来。这是目前的实际情况，所以如果没有国籍没有工作签证，还是主攻FB这类有海外办公室的公司比较稳妥。</p>
+</blockquote>
+<p><strong>Aaron：海外办公室一般就是指中国美国之外的国家有办公室的公司吗？</strong></p>
+<blockquote>
+<p>随便哪个非美国的国家。同时这个公司支持你调回美国总部。</p>
+</blockquote>
+<p><strong>Nathan：你之前在中国上市公司跟成长型公司呆过，之后去了美国的上市公司现在去了成长型公司…能简单说说4者之间的特点或者区别么？从企业文化、职业成长或者其他方面？</strong></p>
+<blockquote>
+<p>这个真是个好问题。总体上说，中美公司差别很大。<br>美国公司的普遍情况是：人少，人均贡献大，管理上非常有心，效率要高的多。越新的公司效率越高。这也是这些公司一步步不断向前学习进化来的。<br>比如：instagram今天已经做到4亿MAU，但也只有300多人的规模。可以想象，这里面对每个人要求有多高， 同时每个人可以做出的贡献有多大。<br>这一点上我们可以聊一天都聊不完，也是美国公司最值得学的地方。</p>
+</blockquote>
+<p><strong>齐沙：能否分享几个facebook的用户增长方法，而这些国内是不太重视的。</strong></p>
+<blockquote>
+<p>Facebook用户增长粗略的分大概分几块吧， 其实大部分这面的公司growth都是最重要的部门。</p>
+</blockquote>
+<ul>
+<li>用户获取：就是如何拿到新用户，比如从搜索引擎来，还是从别的social media来，或者其他。</li>
+<li>engagement： 新用户来了以后，怎么留住这些人，比如facebook新注册用户怎么让他玩起来。</li>
+<li>病毒传播： 就是通过人传人，邮件也好，sms也好，甚至微信这些都是人与人传播的渠道。</li>
+</ul>
+<p>大方向就这么几个，facebook是个数据驱动的公司，会想尽一切办法去验证一个新功能对用户增长这个目标的影响。<br>想主意－》快速做实验－》拿到数据去验证想法－》再想－》再做</p>
+<p><strong>Nathan：前面讲到 Facebook 在各个国家都有办公室，技术的远程办公是一个趋势化，能简单讲讲其中的管理方法跟效率提升？</strong></p>
+<blockquote>
+<p>嗯，远程办公的确好难。我之前在百度工作的时候，北京上海深圳远程开会，就冲着电话瞎吼，效率特别低。Facebook 远程方面应该是花大价钱买了思科的解决方案，每个会议室都有摄像头，可以全程视频音频，同时分享桌面。有很多非常贴心的小功能，尽量解决远程沟通的痛楚。管理上，就是能不开的会就别开了，大家真正把需要解决的问题放到会议上来。</p>
+</blockquote>
+<p><strong>ZZZJASON：从百度到 Facebook、Airbnb，同为国内外TOP互联网公司，在工作中的感受有何不同，国内跨部门沟通成本较大，那么两者 PM（Project Management）和其他业务部门在工作配合上最大差异是什么？</strong></p>
+<blockquote>
+<p>跨部门沟通的问题主要是怎么合作的问题。百度和大部分国内互联网公司的做法叫做“微软式”，就是两个不同部门的人要谈个事情搞合作，必须通过汇报关系的公共父节点，就是得先找上级才好“推动”。<br>这类管理已经在湾区被淘汰了，取而代之的就是直接过去找，这个又涉及到如何评价工作和管理的核心问题，我就不展开了。</p>
+</blockquote>
+<p><strong>Nathan：Uber 跟 Airbnb 带出了分享经济（认知盈余）这波资源结构，有做资产分享的，技能分享的，时间分享，除了U跟A两家以外..你还看好哪些领域的创业公司做这个事情? 美国目前这个领域的潜力公司都有什么？</strong></p>
+<blockquote>
+<p>XX 界的 Uber 是我们最近几年一直听的概念。目前美国还有很多类似的共享经济，比如 instacart，是做超市送货上面的，目前还有做停车的 luxe 等等。当然还有最近刚倒闭的 homejoy。这类共享经济其实很难叫成一个大类，核心就是在每个小的细分领域上，成本和收益都是完全不同的。不是“共享”了，就一定是有人用的或者说赚的到钱的。目前我对这个领域保守乐观，会有一两个巨头，但不会出现很多。</p>
+</blockquote>
+<p><strong>ZZZJASON：共享经济成为现今非常热门的一个话题，Airbnb这样的公司其实初期也会冒着很大的风险才搭起了这样一个桥梁来达到信息的共享，所以用户信任的培养需要公司去做很多努力，比如有看到 Airbnb 的 Is man kind 的视频，除了这些，Airbnb 都有在哪些方面有投入去培养用户？</strong></p>
+<blockquote>
+<p>Branding是airbnb从成立第一天就特别重视的事情，这个租房子 信任是个很重要的事情。所以每年花了大价钱去做各种广告，目的就是把品牌形象带给公众。在一个信任的社区内，每个新加入的人也会友善，也会信任别人。这是一种正向循环。可以说，airbnb初期可以存活下来，重视branding是一个非常重要的点。剩下的就是在所有地方，包括客服，包括产品，包括技术都要真的把塑造品牌维护好。</p>
+</blockquote>
+<p><strong>ALEX.YA：那么我想问，您是如何看待airbnb在华未来市场？是什么原因让您离开前公司，加入 airbnb？有什么特别吸引您的原因吗？</strong></p>
+<blockquote>
+<p>中国的市场很大，包括境内游和出境游，airbnb非常重视中国市场，当然也有特别的策略在中国来玩。<br>加入Airbnb的话，这是一个新的商业模式，我做了8年搜索引擎和social media，赶上了百度和facebook，instagram这类公司的高速成长期，我相信下一个新兴的行业就是airbnb这类企业。我不想错过加入一个新的增长点的机会，同时我可以做出更多有更大影响力的事情，风险对我而言又是可承受的，我就加入了。</p>
+</blockquote>
+<p><strong>ALEX.YA：Airbnb在华，会有工作岗位吗？</strong></p>
+<blockquote>
+<p>有， 我们有很多中国的职位，但目前还没有技术职位，这些都可以在Airbnb的招聘页面上找到。<a href="https://www.airbnb.com/careers/departments" target="_blank" rel="external">https://www.airbnb.com/careers/departments</a></p>
+</blockquote>
+
+      
+    </div>
+
+    <div class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/AMA/"> #AMA </a>
+          
+            <a href="/tags/Airbnb/"> #Airbnb </a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/how-to-crash-coding-interview/">只有程序员看的懂面试圣经｜如何拿下编程面试</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/ama-flipboard-jing/">AMA with Flipboard 中国区负责人 Jing</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </div>
+  </div>
+
+
+
+    
+
+    
+      <div class="comments" id="comments">
+        
+          <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          </div>
+        
+      </div>
+    
+  </div>
+
+
+        </div>
+
+        
+      </div>
+
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview">
+        <div class="site-author motion-element">
+          <img class="site-author-image" src="http://7xjp1f.com2.z0.glb.qiniucdn.com/static-logo.jpg" alt="哪上班团队" />
+          <p class="site-author-name">哪上班团队</p>
+        </div>
+        <p class="site-description motion-element"></p>
+        <div class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            
+              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-name">标签</span>
+              
+          </div>
+
+        </div>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+              <a href="https://facebook.com/nashangban" target="_blank">facebook</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="https://twitter.com/nashangban" target="_blank">twitter</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://weibo.com/nashangban" target="_blank">weibo</a>
+            </span>
+            
+          
+        </div>
+
+        
+        
+
+      </div>
+
+      
+        <div class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于_AMA"><span class="nav-number">1.</span> <span class="nav-text">关于 AMA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#嘉宾介绍：姚旭"><span class="nav-number">2.</span> <span class="nav-text">嘉宾介绍：姚旭</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#精选问答"><span class="nav-number">3.</span> <span class="nav-text">精选问答</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </div>
+      
+
+    </div>
+  </div>
+
+
+    </div>
+
+    <div id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; &nbsp; 
+  2015
+  <span class="with-love">
+    <i class="icon-heart"></i>
+  </span>
+  <span class="author">哪上班团队</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT
+  </a>
+</div>
+
+
+
+      </div>
+    </div>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.3"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.3"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.3" id="motion.global"></script>
+
+
+
+  <script type="text/javascript" src="/js/search-toggle.js"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.3" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var $sidebarInner = $('.sidebar-inner');
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.didShow', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+          var self = this;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      $(indicator).velocity('stop').velocity({
+        opacity: action === 'show' ? 0.4 : 0
+      }, { duration: 100 });
+    }
+
+  });
+</script>
+
+
+  <script type="text/javascript" id="sidebar.nav">
+    $(document).ready(function () {
+      var html = $('html');
+
+      $('.sidebar-nav li').on('click', function () {
+        var item = $(this);
+        var activeTabClassName = 'sidebar-nav-active';
+        var activePanelClassName = 'sidebar-panel-active';
+        if (item.hasClass(activeTabClassName)) {
+          return;
+        }
+
+        var currentTarget = $('.' + activePanelClassName);
+        var target = $('.' + item.data('target'));
+
+        currentTarget.velocity('transition.slideUpOut', 200, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', 200)
+            .addClass(activePanelClassName);
+        });
+
+        item.siblings().removeClass(activeTabClassName);
+        item.addClass(activeTabClassName);
+      });
+
+      $('.post-toc a').on('click', function (e) {
+        e.preventDefault();
+        var offset = $(escapeSelector(this.getAttribute('href'))).offset().top;
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        });
+      });
+
+      // Expand sidebar on post detail page by default, when post has a toc.
+      var $tocContent = $('.post-toc-content');
+      if (isDesktop() && CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    });
+  </script>
+
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+    });
+  </script>
+
+  
+
+  
+  
+  
+
+  
+
+    
+      
+    
+
+    <script type="text/javascript">
+      var disqus_shortname = 'nashangban';
+      var disqus_identifier = 'ama-airbnb-xu/';
+      var disqus_title = 'ama-airbnb-xu';
+      var disqus_url = 'https://blog.nextoffer.com/ama-airbnb-xu/';
+
+      (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }());
+    </script>
+  
+
+
+
+
+  
+  
+  <script type="text/javascript" src="/js/analytics_google-analytics.js?v=0.4.3"></script>
+
+
+</body>
+</html>

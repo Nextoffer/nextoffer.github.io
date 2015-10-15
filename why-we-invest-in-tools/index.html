@@ -1,0 +1,622 @@
+<!doctype html>
+<html class="theme-next use-motion ">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+<meta name="baidu-site-verification" content="I0Gk78EGJO" />
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.3"/>
+
+
+
+
+  <meta name="keywords" content="Facebook,React,GraphQL,ComponentKit,开发工具,Nextoffer博客,技术分享,哪上班博客" />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="https://www.nextoffer.com/static/desktop/img/favicon.ico?v=0.4.3" />
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: '',
+    analytics: {
+      google: 'UA-36895549-2'
+    },
+    sidebar: 'post'
+  };
+</script>
+
+
+
+
+  <title> 为什么要造轮子？ // Nextoffer Blog </title>
+</head>
+
+<body>
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <div id="header" class="header">
+      <div class="header-inner">
+        <h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand">
+      <!--<span class="logo">
+        <i class="icon-logo"></i>
+      </span>
+      <span class="site-title">Nextoffer Blog</span>-->
+      <span class="site-title" style="opacity:1;top:0px;">Nextoffer Blog</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<div class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/">
+            <i class="menu-item-icon icon-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            <i class="menu-item-icon icon-categories"></i> <br />
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            <i class="menu-item-icon icon-archives"></i> <br />
+            归档
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+</div>
+
+
+      </div>
+    </div>
+
+    <div id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              为什么要造轮子？
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于 2015-07-07
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/技术/">技术</a>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/why-we-invest-in-tools/#comments" >
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="why-we-invest-in-tools/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <p>by <a href="https://www.facebook.com/leeb" target="_blank" rel="external">Lee Byron</a></p>
+<p>前几天在 React-Europe 大会上，我分享了一个我花了三年多时间的项目 - <a href="https://www.youtube.com/watch?v=WQLzZf34FJ8" target="_blank" rel="external">GraphQL</a>.</p>
+<p>会议结束后，不少参会者问我：</p>
+<blockquote>
+<p>Facebook 是怎么做到一直保持产出这些“反思当前最佳实践”的新技术的？</p>
+</blockquote>
+<p>既然这是 React 大会，那么就让我们从 React 开始讲起吧。</p>
+<p><img src="http://7xjp1f.com2.z0.glb.qiniucdn.com/150707-react-europe-1.jpg?imageView2/2/w/640/q/100/format/JPG" alt=""><br><em>Photo: Rasmus Andersson</em></p>
+<a id="more"></a>
+<h2 id="两年前">两年前</h2><p>两年前我们开源 <a href="http://facebook.github.io/react" target="_blank" rel="external">React</a> 的时候，这一直是被 JavaScript 社区取笑的对象；甚至 Facebook 内部（包括我自己）都不认为这是一个好想法。<a href="https://www.facebook.com/jordwalke" target="_blank" rel="external">Jordan Walke</a> 的执着和理想主义最终还是对大家产生了影响。最早我们以为他疯了，不过他的确是个疯子，但他也确实发现了一些什么。现在，我们看到 React 已经改变了我们在各种平台上「造」东西的方式。<a href="https://www.facebook.com/adamjernst" target="_blank" rel="external">Adam Ernst</a> 借鉴了 Jordan 的一些想法，然后「造」了 <a href="http://componentkit.org" target="_blank" rel="external">ComponentKit</a> for iOS. 当然，我们自己的 iOS 组刚接触她的时候也是充满了猜疑；但再一次，ComponentKit 很大程度地改变了我们「造」iOS 程序的方式。</p>
+<p><strong>React 和 ComponentKit 都是 Facebook 内部个人自主发起的项目。</strong>事实上当时这些项目的方向和工程师团队原有的开发方式都是相反的。React 直接挑战我们当时非常看好的一些 JS 框架。其实刚开始开发 ComponentKit 的时候我们内部就已经「造」并且在使用了的一些 iOS UI 框架。</p>
+<blockquote>
+<p>其他的工具并没有问题，也不差（话说回来他们其实很赞）但他们也不是完美的。</p>
+</blockquote>
+<p>他们各自都有着利弊权衡，都有自己的优势和劣势。只有在一个自由开发环境的情况下，工程师才能去「造」一些他们认为更高效帮助他们完成工作的工具。</p>
+<h2 id="工程师的冒险文化">工程师的冒险文化</h2><p>在 Facebook，我们不仅仅让，更是鼓励，工程师做这些好玩的“实验”。其实这些项目还是存在一定风险的，而且也不是很吸引人，也常常失败（需要改）。然后你会发现像 React, ComponentKit, HHVM, GraphQL, Immutable.js, Flow, Pop, 和 AsyncDisplayKit 这样的“实验”。这些都是值得去冒的险。对于像 Facebook 这样拥有强大的工程团队的公司来说，其中一个优势是可以充分地让工程师们去尝试这些实验，而不是盯着 scrum 或者为了公司的短期业绩来工作。</p>
+<p>上面提到的每一个项目都遇到过非常强烈的反对。有些人（有时候甚至是我）会想让一些项目早些承认失败。然而他们并没有停止。Facebook 不仅有很好的工程师管理哲学，而且有非常棒的管理层 - 他们知道相信工程师们的重要性。就算项目遇到了同事的反对，就算也未知项目的价值所在，就算还有更重要的事情可以去做，Facebook 的管理层信任他们的工程师去冒一些值得冒的险，同时专注在他们相信能够产生影响的领域。</p>
+<p>我的小组 - Product Infrastructure, 和大多数的 Facebook 小组一样都有相同的哲学：工程师对世界的影响不止于公司的产品。上面提到的开源项目都有着很强的社区，每个开源都对整个互联网/软件行业有着深刻的影响。开源不仅仅是一个公益理想化的东西，她还是我们如何学习和展示我们的工作启发的影响的重要组成部分。</p>
+<p>健康的开源环境在招聘环节也是非常有利的。一些我面试过的求职者对我说，他们对 Facebook 的关注是因为看到了 React, AsyncDisplayKit, Pop, 这些项目；并且想参与到这些项目中去。这些项目吸引了非常聪明的人才进来，从而自然地产生一个良性循环。</p>
+<h2 id="Success_is_not_found_in_isolation">Success is not found in isolation</h2><p>随着项目变得越来越有意思，她的潜力被更多的人看到，团队组建 - 然后一个雪球效应自然地推进了一整个项目。在 Facebook，工程师做着与自己职份外的项目并不罕见；或者从一个小组调到其他小组都非常常见；而这样的文化让这个雪球可以滚起来。这也意味着每个项目后面有许多无名功臣。</p>
+<p>在这里我想点名一些（远远少于全部成员）早期为 GraphQL 做出贡献的人：<a href="https://www.facebook.com/schrockn" target="_blank" rel="external">Nick Schrock</a>, <a href="https://www.facebook.com/dschafer" target="_blank" rel="external">Daniel Schafer</a>, 和我自己。</p>
+<ul>
+<li><a href="https://www.facebook.com/beau" target="_blank" rel="external">Beau Hartshorne</a> 是 GraphQL 不可缺少的催化剂。他准确定位并指明了问题所在，找到了对的人，而且激发了我们去找解决问题的方案。Sometimes it’s hard to see the forest through the trees, and Beau’s a rare person who is always looking at the forest.</li>
+</ul>
+<ul>
+<li><a href="https://www.facebook.com/j.p.dann" target="_blank" rel="external">Jonathan Dann</a> 和 <a href="https://www.facebook.com/dmr" target="_blank" rel="external">David Renie</a> 是两位推动第一版 GraphQL 的 iOS 工程师。是他们做了非常大量的工作把 GraphQL 整合进 News Feed. 他们也协助建立了一些我们一直沿用到今天的非常重要的基础设施。</li>
+</ul>
+<ul>
+<li><p><a href="https://www.facebook.com/rsms" target="_blank" rel="external">Rasmus Andersson</a> 用全新视角想象到一种不一样的方式在移动应用中传输数据；而这种方式成为了我们 Android SDK 的基础。他的一些想法还激发了 Relay - 用 GraphQL「造」web 端应用的工具。</p>
+</li>
+<li><p>另外两位 GraphQL 组早期成员，<a href="https://www.facebook.com/nroman" target="_blank" rel="external">Nathaniel Roman</a> and <a href="https://www.facebook.com/charlesma" target="_blank" rel="external">Charles Ma</a>, 帮助开发了 GraphQL 客户端工具。</p>
+</li>
+</ul>
+<ul>
+<li><a href="https://www.facebook.com/swolchok" target="_blank" rel="external">Scott Wolchok</a> 一手组织和改善了 GraphQL 的 iOS 和其他跨平台的客户端工具的数据模型。他的严谨的思路启发了我们去研究最新 cross-cutting 的进展。</li>
+</ul>
+<p>到今天，已经有一个成熟的小组专门支持和投入到 GraphQL, 服务器，客户端工具，和 Facebook 的类型系统。</p>
+<h2 id="我们的使命">我们的使命</h2><blockquote>
+<p>正是因为我们对持续产出长期价值的专注，让 Facebook 能够一直「造」出一些“反思当前最佳实践”的技术，且在业内引起不小的影响。我们敢去试错；我们相信工程师能去做正确的事。当一些“实验”看起来有点儿意思的时候，充满想法和聪明的人会自发地聚到一起来实现这个“实验”。</p>
+</blockquote>
+<p><strong>在 Facebook, 我们的职责不仅仅是「造」Facebook，还是让世界变得更加的开放和连接。</strong>而我们这个 Product Infrastructure 小组通过开源这些工具来帮助我们完成这个使命。</p>
+<p><a href="https://medium.com/@leeb/why-invest-in-tools-3240ce289930" target="_blank" rel="external">原文链接 on Medium</a><br><em>本文已获得作者翻译以及传播许可</em></p>
+
+      
+    </div>
+
+    <div class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/翻译/"> #翻译 </a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/ama-flipboard-jing/">AMA with Flipboard 中国区负责人 Jing</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/fork-pepsin/">当下最火爆的图片社交 FORK 背后的技术</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </div>
+  </div>
+
+
+
+    
+
+    
+      <div class="comments" id="comments">
+        
+          <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          </div>
+        
+      </div>
+    
+  </div>
+
+
+        </div>
+
+        
+      </div>
+
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview">
+        <div class="site-author motion-element">
+          <img class="site-author-image" src="http://7xjp1f.com2.z0.glb.qiniucdn.com/static-logo.jpg" alt="哪上班团队" />
+          <p class="site-author-name">哪上班团队</p>
+        </div>
+        <p class="site-description motion-element"></p>
+        <div class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            
+              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-name">标签</span>
+              
+          </div>
+
+        </div>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+              <a href="https://facebook.com/nashangban" target="_blank">facebook</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="https://twitter.com/nashangban" target="_blank">twitter</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://weibo.com/nashangban" target="_blank">weibo</a>
+            </span>
+            
+          
+        </div>
+
+        
+        
+
+      </div>
+
+      
+        <div class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#两年前"><span class="nav-number">1.</span> <span class="nav-text">两年前</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工程师的冒险文化"><span class="nav-number">2.</span> <span class="nav-text">工程师的冒险文化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Success_is_not_found_in_isolation"><span class="nav-number">3.</span> <span class="nav-text">Success is not found in isolation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我们的使命"><span class="nav-number">4.</span> <span class="nav-text">我们的使命</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </div>
+      
+
+    </div>
+  </div>
+
+
+    </div>
+
+    <div id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; &nbsp; 
+  2015
+  <span class="with-love">
+    <i class="icon-heart"></i>
+  </span>
+  <span class="author">哪上班团队</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT
+  </a>
+</div>
+
+
+
+      </div>
+    </div>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.3"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.3"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.3" id="motion.global"></script>
+
+
+
+  <script type="text/javascript" src="/js/search-toggle.js"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.3" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var $sidebarInner = $('.sidebar-inner');
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.didShow', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+          var self = this;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      $(indicator).velocity('stop').velocity({
+        opacity: action === 'show' ? 0.4 : 0
+      }, { duration: 100 });
+    }
+
+  });
+</script>
+
+
+  <script type="text/javascript" id="sidebar.nav">
+    $(document).ready(function () {
+      var html = $('html');
+
+      $('.sidebar-nav li').on('click', function () {
+        var item = $(this);
+        var activeTabClassName = 'sidebar-nav-active';
+        var activePanelClassName = 'sidebar-panel-active';
+        if (item.hasClass(activeTabClassName)) {
+          return;
+        }
+
+        var currentTarget = $('.' + activePanelClassName);
+        var target = $('.' + item.data('target'));
+
+        currentTarget.velocity('transition.slideUpOut', 200, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', 200)
+            .addClass(activePanelClassName);
+        });
+
+        item.siblings().removeClass(activeTabClassName);
+        item.addClass(activeTabClassName);
+      });
+
+      $('.post-toc a').on('click', function (e) {
+        e.preventDefault();
+        var offset = $(escapeSelector(this.getAttribute('href'))).offset().top;
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        });
+      });
+
+      // Expand sidebar on post detail page by default, when post has a toc.
+      var $tocContent = $('.post-toc-content');
+      if (isDesktop() && CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    });
+  </script>
+
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+    });
+  </script>
+
+  
+
+  
+  
+  
+
+  
+
+    
+      
+    
+
+    <script type="text/javascript">
+      var disqus_shortname = 'nashangban';
+      var disqus_identifier = 'why-we-invest-in-tools/';
+      var disqus_title = 'why-we-invest-in-tools';
+      var disqus_url = 'https://blog.nextoffer.com/why-we-invest-in-tools/';
+
+      (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }());
+    </script>
+  
+
+
+
+
+  
+  
+  <script type="text/javascript" src="/js/analytics_google-analytics.js?v=0.4.3"></script>
+
+
+</body>
+</html>
