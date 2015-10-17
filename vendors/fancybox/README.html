@@ -9,10 +9,10 @@
     <span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">src</span>=<span class="value">"/fancybox/jquery.fancybox.pack.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
 <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
 </code></pre><p>Create your links with a <code>title</code> if you want a title to be shown, and add a class:</p>
-<pre><code>&lt;a <span class="variable">href=</span><span class="string">"large_image.jpg"</span> <span class="variable">class=</span><span class="string">"fancybox"</span> <span class="variable">title=</span><span class="string">"Sample title"</span>&gt;&lt;img <span class="variable">src=</span><span class="string">"small_image.jpg"</span> /&gt;&lt;/a&gt;
+<pre><code>&lt;<span class="tag">a</span> href=<span class="string">"large_image.jpg"</span> class=<span class="string">"fancybox"</span> title=<span class="string">"Sample title"</span>&gt;&lt;<span class="tag">img</span> src=<span class="string">"small_image.jpg"</span> /&gt;&lt;/a&gt;
 </code></pre><p>If you have a set of related items that you would like to group,<br>additionally include a group name in the <code>rel</code> (or <code>data-fancybox-group</code>) attribute:</p>
-<pre><code>&lt;a <span class="variable">href=</span><span class="string">"large_1.jpg"</span> <span class="variable">class=</span><span class="string">"fancybox"</span> <span class="variable">rel=</span><span class="string">"gallery"</span> <span class="variable">title=</span><span class="string">"Sample title 1"</span>&gt;&lt;img <span class="variable">src=</span><span class="string">"small_1.jpg"</span> /&gt;&lt;/a&gt;
-&lt;a <span class="variable">href=</span><span class="string">"large_2.jpg"</span> <span class="variable">class=</span><span class="string">"fancybox"</span> <span class="variable">rel=</span><span class="string">"gallery"</span> <span class="variable">title=</span><span class="string">"Sample title 1"</span>&gt;&lt;img <span class="variable">src=</span><span class="string">"small_2.jpg"</span> /&gt;&lt;/a&gt;
+<pre><code>&lt;<span class="tag">a</span> href=<span class="string">"large_1.jpg"</span> class=<span class="string">"fancybox"</span> rel=<span class="string">"gallery"</span> title=<span class="string">"Sample title 1"</span>&gt;&lt;<span class="tag">img</span> src=<span class="string">"small_1.jpg"</span> /&gt;&lt;/a&gt;
+&lt;<span class="tag">a</span> href=<span class="string">"large_2.jpg"</span> class=<span class="string">"fancybox"</span> rel=<span class="string">"gallery"</span> title=<span class="string">"Sample title 1"</span>&gt;&lt;<span class="tag">img</span> src=<span class="string">"small_2.jpg"</span> /&gt;&lt;/a&gt;
 </code></pre><p>Initialise the script like this:</p>
 <pre><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">
     $(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
@@ -152,7 +152,7 @@ $<span class="class">.fancybox</span><span class="class">.inner</span>
     <span class="rule"><span class="attribute">right</span>:<span class="value"> -<span class="number">80px</span></span></span>;
 }</span>
 </code></pre><p>In that case, you might want to increase space around box:</p>
-<pre><code>$<span class="params">(<span class="string">".fancybox"</span>)</span>.fancybox<span class="params">({
+<pre><code>$(<span class="string">".fancybox"</span>).fancybox({
     margin : [<span class="number">20</span>, <span class="number">60</span>, <span class="number">20</span>, <span class="number">60</span>]
-})</span>;
+});
 </code></pre><h2 id="Bug_tracker">Bug tracker</h2><p>Have a bug? Please create an issue on GitHub at <a href="https://github.com/fancyapps/fancyBox/issues">https://github.com/fancyapps/fancyBox/issues</a></p>
