@@ -537,6 +537,8 @@ td {
 .icon-archives,
 .icon-tags,
 .icon-about,
+.icon-wechat,
+.icon-weibo,
 .icon-feed {
   font-size: 24px;
   color: #000;
@@ -546,6 +548,12 @@ td {
 }
 .icon-heart {
   font-size: 14px;
+}
+.icon-wechat:before {
+  content: "\e900";
+}
+.icon-weibo:before {
+  content: "\e901";
 }
 .icon-logo:before {
   content: "\e61c";
@@ -1172,7 +1180,7 @@ body {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #88ad46;
+  background: #aac783;
 }
 .sidebar-nav {
   margin: 0;
@@ -2047,4 +2055,18 @@ body {
   .site-search-toggle {
     display: none;
   }
+}
+.menu-item.menu-item-wechat a {
+  position: relative;
+}
+.menu-item.menu-item-wechat a .it-news-wechat-qrcode {
+  position: absolute;
+  width: 200px;
+  top: -75px;
+  left: 100px;
+  box-shadow: 0 0 16px #f0f0f0;
+  display: none;
+}
+.menu-item.menu-item-wechat a:hover .it-news-wechat-qrcode {
+  display: block;
 }
